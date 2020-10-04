@@ -107,21 +107,6 @@ choices = list(sym_single)
 
 def food(age,gender,symptoms,symptoms2,symptoms3):
 
-  # di = pd.DataFrame(np.zeros((1, 55)))
-  # di[0] = 4677
-  # di[53] = age
-  # di[54] = 0
-  
-  # do = classifier.predict(di)
-  # do_decoded = foo.inverse_transform(do)  
-  # food = do_decoded
-
-
-
-  # INPUT
-  # gender = ['Male']
-  # symps = ['BLOOD PRESSURE INCREASED','DEATH']
-
   g_enc = le.transform([gender])
   s_enc = le2.transform([symptoms])
   s_enc2 = le2.transform([symptoms2]) 
@@ -144,7 +129,7 @@ def food(age,gender,symptoms,symptoms2,symptoms3):
   do_decoded2 = foo.inverse_transform(do2) 
 
   
-  return do_decoded
+  return do_decoded[0]
 
 
 age = gr.inputs.Textbox("text")
